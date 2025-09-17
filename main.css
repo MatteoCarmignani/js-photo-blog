@@ -1,3 +1,24 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-image: url(img/wall.png);
+    background-size: cover; 
+    display: flex;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 80px;
+    padding: 15px;
+    font-family: "Edu TAS Beginner", sans-serif;
+}
+
 main {
-    
+    background-image: url(img/cork.png);
+    /* debug */
+    height: 600px;
 }
