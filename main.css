@@ -19,8 +19,9 @@ header h1 {
 
 main { 
     background-image: url(img/cork.png); 
-    /* debug */ 
-    height: 600px; }
+    /* debug 
+    height: 600px;*/ 
+}
 
 .container-principale {
   display: flex;
@@ -32,22 +33,25 @@ main {
   height: auto;
 }
 
-.container {
-  text-align: center;
+.card {
   border: 1px solid #ccc;
   padding: 10px;
-  flex: 1 0 calc(33.333% - 20px); 
+  flex: 1 0 calc(33.333% - 20px);
+  background-color: white; 
 }
 
-.container img {   
+.card img {   
   max-width: 100%;
   height: auto;
   display: block;
   margin: 0 auto 10px auto;
-  padding: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
-.container p {
-    color: #ccc;
+.card p {
+    color: gray;
     font-family: "Sometype Mono", monospace;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
