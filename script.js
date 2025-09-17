@@ -8,7 +8,7 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((response) => {
     posts.forEach(post => {
         postString += `
         <div class="card">
-            <img src="${post.url}" alt="Immagine 1">
+            <img src="${post.url}" alt="immagine">
             <p>${post.title}</p>
         </div>
         `;
