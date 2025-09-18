@@ -1,14 +1,12 @@
 const contOutput = document.querySelector(".container-principale");
 const overlay = document.querySelector(".overlay");
-const button = document.getElementById("bottone");
-const overlayImmagine = document.getElementById("overlay-immagine")
+const bottone = document.getElementById("bottone");
+const overlayImmagine = document.getElementById("overlay-immagine"); // immagine dentro overlay
 
 // API
 axios.get("https://lanciweb.github.io/demo/api/pictures/").then((response) => {
-
     const posts = response.data;
 
-    //Stringa vuota dove inserire card
     let postString = "";
 
     posts.forEach(post => {
@@ -16,26 +14,28 @@ axios.get("https://lanciweb.github.io/demo/api/pictures/").then((response) => {
         <div class="card">
             <img src="${post.url}" alt="immagine">
             <p>${post.date}</p>
-            <h3>${post.title}<h3>
+            <h3>${post.title}</h3>
         </div>
         `;
     });
 
-    //sposto tutto in html
     contOutput.innerHTML = postString;
 
-    // PARTE 2
-    
+    // apparizione dell'overlay
     document.querySelectorAll(".card").forEach(card => {
         card.addEventListener("click", () => {
-        //alert("Funziona!")
-        overlay.style.display = "flex";
+
+            //sistemazione foto specifiche
+            const imgSrc = card.querySelector("img").src; 
+            overlayImmagine.src = imgSrc; 
+            
+            //mostro l'overlay
+            overlay.style.display = "flex";               
+        });
     });
 
+    // sparizione dell'overlay
     bottone.addEventListener("click", () => {
-    overlay.style.display = "none";
-    });
-    
+        overlay.style.display = "none";
     });
 });
-
