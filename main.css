@@ -39,6 +39,7 @@ main {
   flex: 1 0 calc(33.333% - 20px);
   background-color: white; 
   position: relative;
+  transition: transform 0.3s ease;
 }
 
 .card img {   
@@ -55,6 +56,11 @@ main {
     padding: 8px;
 }
 
+.card h3 {
+  font-family: "Sometype Mono", monospace;
+  padding: 0 8px;
+}
+
 .card::before {
     content: url(img/pin.svg);
     position: absolute;
@@ -62,6 +68,57 @@ main {
     left: 50%;
     transform: translateX(-50%);
 }
+
+.card:hover {
+  background-color: lightblue; 
+  transform: rotate(10deg);
+  cursor: pointer;
+}
+
+.card:hover::before {
+  content: none;
+}
+
+
+/* PARTE 2 */
+
+.overlay {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;          
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); 
+  justify-content: center; 
+  align-items: center;
+}
+
+.overlay-content {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.overlay-content button {
+  margin-bottom: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #333;
+  color: white;
+}
+
+.overlay-content img {
+  max-width: 300px;
+  border-radius: 10px;
+}
+
 
 
 
